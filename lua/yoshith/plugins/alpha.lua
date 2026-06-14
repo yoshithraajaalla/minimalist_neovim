@@ -21,13 +21,13 @@ return {
 
         -- Set menu with Nerd Font icons
         dashboard.section.buttons.val = {
-            dashboard.button("f", "  Find File          <leader> f f", "<cmd>Telescope find_files<CR>"),
-            dashboard.button("g", "  Live Grep          <leader> f g", "<cmd>Telescope live_grep<CR>"),
-            dashboard.button("r", "  Recent Files       <leader> f r", "<cmd>Telescope oldfiles<CR>"),
-            dashboard.button("b", "  Browse Buffers     <leader> f b", "<cmd>Telescope buffers<CR>"),
-            dashboard.button("n", "  New File           n / i", "<cmd>enew<CR>"),
-            dashboard.button("e", "  Toggle Nvimtree    <C-n>", "<cmd>NvimTreeToggle<CR>"),
-            dashboard.button("?", "  Show all keymaps   ?", "<cmd>Telescope keymaps<CR>"),
+            dashboard.button("f", "  › Find File          <leader> f f", "<cmd>Telescope find_files<CR>"),
+            dashboard.button("g", "  › Live Grep          <leader> f g", "<cmd>Telescope live_grep<CR>"),
+            dashboard.button("r", "  › Recent Files       <leader> f r", "<cmd>Telescope oldfiles<CR>"),
+            dashboard.button("b", "  › Browse Buffers     <leader> f b", "<cmd>Telescope buffers<CR>"),
+            dashboard.button("n", "  › New File           n / i", "<cmd>enew<CR>"),
+            dashboard.button("e", "  › Toggle Nvimtree    <C-n>", "<cmd>NvimTreeToggle<CR>"),
+            dashboard.button("?", "  › Show all keymaps   ?", "<cmd>Telescope keymaps<CR>"),
         }
 
         -- Set version line (previously footer)
