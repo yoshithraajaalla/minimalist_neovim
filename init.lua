@@ -29,6 +29,9 @@ local has_v012 = vim.fn.has("nvim-0.12") == 1
 -- 1. LEADER & NETRW (disable netrw early)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+-- Optional plugins (off by default; flip to true to enable)
+vim.g.yoshith_enable_colorizer = false
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 

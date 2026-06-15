@@ -4,8 +4,11 @@ A minimal, intentional Neovim configuration that just works. Windows-first (Powe
 
 **Minimal. Intentional. Fast.**
 
+![Dark startup dashboard with koda-dark theme](showcase/dark_start_screen.png)
+
 ## Features
 
+- **Startup dashboard** — alpha-nvim welcome screen with quick actions and keymap hints
 - **Lazy-loaded plugins** — fast startup; only load what you need
 - **LSP + Mason** — language servers and formatters auto-installed from a single declarative config
 - **Telescope** — fuzzy find files, live grep, buffers, LSP references, and more
@@ -64,6 +67,7 @@ Then run `:Lazy sync` and restart.
 nvim/
 ├── init.lua                 # Entry point: bootstrap, theme, languages, autocmds
 ├── lazy-lock.json           # Pinned plugin versions
+├── showcase/                # Screenshots for README
 └── lua/yoshith/
     ├── core/
     │   ├── env.lua          # OS detection, shell selection, Windows quirks
@@ -98,6 +102,7 @@ nvim/
 | [smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim) | Smooth cursor |
 | [cinnamon.nvim](https://github.com/declancm/cinnamon.nvim) | Smooth scrolling |
 | [lazydev.nvim](https://github.com/folke/lazydev.nvim) | Lua LSP library hints |
+| [nvim-colorizer.lua](https://github.com/catgoose/nvim-colorizer.lua) | Inline color preview (disabled by default) |
 
 ## Language Support
 
@@ -131,12 +136,28 @@ Leader key is **Space**.
 | `<leader>rc` | Edit `init.lua` |
 | `<leader>/` | Search current buffer |
 | `<leader>cc` | Copy entire file |
+| `<leader>s` | Select entire file |
+| `<leader>ra` | Toggle alternate file |
 | `<leader>d` / `<leader>dd` | Cut (delete with yank) |
 | `d` / `dd` / `dw` … | Delete without yank |
 | `<leader>p` (visual) | Paste without yank |
 | `<leader>t` | Toggle floating terminal |
 | `<leader>T` | Cycle theme |
 | `<leader>R` | Restart Neovim (0.12+) |
+
+### Visual
+
+| Key | Action |
+|-----|--------|
+| `<` / `>` | Indent selection (stay in visual mode) |
+| `J` / `K` | Move selection down / up |
+
+### Navigation
+
+| Key | Action |
+|-----|--------|
+| `<C-d>` / `<C-u>` | Scroll down / up (centred) |
+| `n` / `N` | Next / previous search match (centred) |
 
 ### Windows & Buffers
 
@@ -184,6 +205,8 @@ Leader key is **Space**.
 | `<leader>ca` | Code action |
 | `<leader>lf` | Format buffer |
 | `<leader>l` | Show line diagnostics |
+| `<leader>la` | Show all diagnostics (loclist) |
+| `<leader>D` | Type definition |
 | `[d` / `]d` | Previous / next diagnostic |
 | `<leader>ci` / `<leader>co` | Incoming / outgoing calls |
 
@@ -230,6 +253,7 @@ require("yoshith.core.theme").setup({ sync_with_os = false })
 - **Languages** — edit the `language.setup()` block in `init.lua`
 - **Plugins** — add or modify files under `lua/yoshith/plugins/`
 - **Theme** — edit `lua/yoshith/core/theme.lua`
+- **Colorizer** — set `vim.g.yoshith_enable_colorizer = true` in `init.lua` to enable inline hex/RGB preview
 
 After changes to `init.lua` or plugin files, run `:Lazy reload` or restart Neovim. On Neovim 0.12+, `<leader>R` restarts in place.
 
