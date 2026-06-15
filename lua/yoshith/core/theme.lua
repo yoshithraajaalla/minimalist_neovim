@@ -70,6 +70,9 @@ local function apply(name, opts)
         return false
     end
     apply_transparency()
+    if name == "koda-light" then
+        vim.api.nvim_set_hl(0, "Visual", { bg = "#DBDBDB" })
+    end
     if opts.persist ~= false then persist(name) end
     if opts.notify then vim.notify(("Theme: %s"):format(name)) end
     return true
